@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Navbar';
+import WeatherCard from './components/WeatherCards';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Row, Container, Col} from 'react-bootstrap';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Container>
+    <Row>
+      <Col>
+        <Nav />
+      </Col>
+      </Row>
+      <br></br>
+      <br></br>
+      <br></br>
+    <Row className="justify-content-md-center">
+      <Col>
+        <WeatherCard/>
+      </Col>
+    </Row>
+  </Container>
+    
   );
 }
 
