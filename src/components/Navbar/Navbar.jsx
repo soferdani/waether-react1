@@ -1,15 +1,21 @@
 import React from 'react'
 import { Button, Navbar, Form, Nav, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 const divStyle = {
     marginLeft: '10px',
 };
 
 
-export default function mainNavbar() { 
+
+export default function MainNavbar() { 
     
-    
+    const [cityFromUser, setCityFromUser] = useState ('')
+
+    const searchCity = function () {
+        console.log(cityFromUser);
+    }
 
     return (
         <>
@@ -22,9 +28,9 @@ export default function mainNavbar() {
                         <Nav.Link href="#favorites">Favorites</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
-                <Button variant="outline-info">Search</Button>
+                <Button onClick={searchCity} variant="outline-info">Search</Button>
                 <Form style={divStyle} inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <FormControl onChange={(e)=> setCityFromUser(e.target.value)} type="text" placeholder="Search" className="mr-sm-2" />
                 </Form>
              </Navbar>   
         </>
